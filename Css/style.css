@@ -23,13 +23,15 @@ body{
     position: fixed;
     right: 20px;
     bottom: 20px;
-    font-size: 50px;
+    font-size: 40px;
     cursor: pointer;
-    border-radius: 50%;
-    color:black;
+    border-radius: 15%;
+    padding: 0px 5px;
+
     z-index: 9;
-    opacity: 0.7;
-    background-color: red;
+  
+    background-color: darkred;
+    color:#ffffff;
     display: none;
 }
 
@@ -79,12 +81,13 @@ body{
 
 .RightSidebar .menu{
     width: 100%;
-    height: 20%;
-    margin-top: 20px;
+    height: auto;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
    
 
 
@@ -122,6 +125,21 @@ body{
     margin: 0;
 }
 
+
+.RightSidebar .menu .submenu ul{
+  
+    
+    margin-top: 5px;
+    padding: 10px;
+    margin-left: -10px;
+    display: none;
+    
+}
+
+.RightSidebar .menu .submenu ul li{
+    list-style: none;
+    text-align: left;    
+}
 
 .header .SearchBar {
    
@@ -318,6 +336,63 @@ body{
     height: auto;
     margin: auto;
 }
+
+
+.Popular .SubPopular .card{
+    overflow: hidden;
+}
+
+.Popular .SubPopular .card .subcard{
+    position: relative;
+    overflow: hidden;
+    transition: all 0.7s ease-in-out;   
+    cursor: pointer;
+
+}
+
+
+.Popular .SubPopular .card .subcard h3{
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color:#ffffff;
+    margin: 0 auto;
+    font-size: 2rem;
+    z-index: 2;
+    transition: all 0.7s linear;
+
+}
+
+.Popular .SubPopular .card .subcard:hover h3{
+    bottom:40%;
+}
+
+.Popular .SubPopular .card .subcard::before{
+
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    display: block;
+    z-index: 2;
+    opacity: 1;
+    
+}
+
+
+
+.Popular .SubPopular .card .subcard:hover{
+    transform: scale(1.1) !important;
+    
+}
+
+.Popular .SubPopular .card .subcard:hover::before{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8));
+}
+
 
 footer {
     background: black;
