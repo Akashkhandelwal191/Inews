@@ -169,9 +169,9 @@ function BreakingTrending() {
     });
 }
 
-if (window.location.pathname == "/Inews/index.html") {
+if (window.location.pathname == "/Inews/") {
   BreakingTrending();
-}
+};
 
 
 
