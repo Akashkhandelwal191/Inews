@@ -95,7 +95,7 @@ const GetSearchQueryValue = (queryValue) =>{
 
 
 
-if (window.location.pathname == "/Query.html") {
+if (window.location.pathname == "/Inews/Query.html") {
   queryfetch();
 };
 
@@ -169,7 +169,7 @@ function BreakingTrending() {
     });
 }
 
-if (window.location.pathname == "/index.html") {
+if (window.location.pathname == "/Inews/index.html") {
   BreakingTrending();
 }
 
