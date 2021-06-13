@@ -7,6 +7,7 @@ var FetchTrending = document.getElementById("FetchTrending");
 var FetchQuery = document.getElementById("FetchQuery");
 var SearchIcon = document.getElementById("SearchIcon");
 var form = document.getElementById("form");
+var SubscribeBtn = document.getElementById("SubscribeBtn");
 
 SearchIcon.addEventListener("click",function(){
 
@@ -247,7 +248,17 @@ form.addEventListener("submit",function(e){
 
    e.preventDefault();
    this.reset();
-   console.log("form Submitted");
+   SubscribeBtn.innerHTML = ` <div class="spinner-border text-primary" role="status">
+   <span class="visually-hidden">Loading...</span>
+ </div>`;
 
+ setTimeout(() => {
+   SubscribeBtn.innerHTML = `Thanks For Subscribed <i class="fas fa-check"></i>`;
+ }, 2000);
+
+
+  setTimeout(() => {
+    SubscribeBtn.innerHTML = `Subscribe`;
+  }, 12000);
 
 });
