@@ -5,6 +5,19 @@ var RightSidebar = document.getElementById("RightSidebar");
 var close = document.getElementById("Close");
 var FetchTrending = document.getElementById("FetchTrending");
 var FetchQuery = document.getElementById("FetchQuery");
+var SearchIcon = document.getElementById("SearchIcon");
+var form = document.getElementById("form");
+
+SearchIcon.addEventListener("click",function(){
+
+  
+  let SearchValue = document.getElementById("SearchQueryNews").value;
+  console.log(SearchValue);
+  SetQuery(SearchValue);
+  location.reload();
+
+
+});
 
 menu.addEventListener("click", function () {
   menu.querySelector("span:nth-child(1)").style.transform = "rotate(45deg)";
@@ -45,6 +58,10 @@ const SetQuery = (queryValue) => {
 
 const queryfetch = () => {
   let queryValue2 = localStorage.getItem("query");
+  if(queryValue2 == "")
+  {
+    queryValue2 = "World";
+  }
   document.getElementById("QueryHead").innerHTML = queryValue2;
   if (queryValue2.toUpperCase() == "BUSINESS") {
          GetSearchQueryValue(queryValue2);
@@ -69,6 +86,9 @@ const queryfetch = () => {
   {
      GetSearchQueryValue(queryValue2);
   }
+  else{
+     GetSearchQueryValue(queryValue2);
+  }
 
 };
 
@@ -77,27 +97,42 @@ const GetSearchQueryValue = (queryValue) =>{
 
   
     console.log(queryValue);
-    //     //Fetch Api
-    // fetch(
-    //   `https://gnews.io/api/v4/search?q=${queryValue}&lang=en&country=in&token=${key}`
-    // )
-    //   .then((data) => {
-    //     return data.json();
-    //   })
-    //   .then((result) => {
+        //Fetch Api
+    fetch(
+      `https://gnews.io/api/v4/search?q=${queryValue}&lang=en&country=in&token=${key}`
+    )
+      .then((data) => {
+        return data.json();
+      })
+      .then((result) => {
+           let finalresult = result.articles;
+          
+           finalresult.forEach(function(item){
 
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+            let item2 = item.content;
+            let original = item2.slice(0, item2.length - 15);
+
+
+            FetchQuery.innerHTML +=`<div class="card mb-3 mx-auto">
+            <img src="${item.image}" class="card-img-top img-fluid" alt="..." style="height: 300px; object-fit:cover">
+            <div class="card-body">
+              <h5 class="card-title">${item.title}</h5>
+              <p class="card-text text-primary">By ${item.source.name}</p>
+              <p class="card-text">${original}<a href="${item.url}">Read More</a></p>
+              <p class="card-text"><small class="text-muted">Published ${item.publishedAt}</small></p>
+            </div>
+          </div>`;
+          
+
+
+           });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 };
 
 
-
-
-if (window.location.pathname == "/Inews/Query.html") {
-  queryfetch();
-};
 
 
 
@@ -169,9 +204,7 @@ function BreakingTrending() {
     });
 }
 
-if (window.location.pathname == "/Inews/") {
-  BreakingTrending();
-};
+
 
 
 
@@ -205,4 +238,16 @@ $(document).ready(function () {
   $("#CategoriesToggle").click(function () {
     $("#Categories").toggle(1000);
   });
+});
+
+
+
+
+form.addEventListener("submit",function(e){
+
+   e.preventDefault();
+   this.reset();
+   console.log("form Submitted");
+
+
 });

@@ -32,7 +32,7 @@
     <!-- Web Fonts Css -->
     <link rel="stylesheet" href="Css/all.css" />
   </head>
-  <body>
+  <body onload="BreakingTrending()">
     <!-- Scroll bottom to top Start -->
     <!-- fas fa-arrow-circle-up -->
     <i
@@ -50,8 +50,8 @@
     <header>
       <nav class="header">
         <div class="SearchBar">
-          <input type="text" placeholder="Searching..." />
-          <div class="SearchIcon"><i class="fas fa-search"></i></div>
+          <input type="text" placeholder="Searching..." id="SearchQueryNews" />
+          <div class="SearchIcon" id="SearchIcon"><i class="fas fa-search"></i></div>
         </div>
 
         <div class="Headerheading">
@@ -151,7 +151,8 @@
                 class="card-img-top img-fluid"
                 alt="..."
               />
-              <h3>Business</h3>
+            
+              <h3><a href="Query.html" class="hide">Business</a></h3>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -173,8 +174,9 @@
                 src="Images/Entertainment.jpg"
                 class="card-img-top img-fluid"
                 alt="..."
-              />
-              <h3>Entertainment</h3>
+              />  
+           
+              <h3><a href="Query.html" class="hide">Entertainment</a></h3>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -196,7 +198,8 @@
                 class="card-img-top img-fluid"
                 alt="..."
               />
-              <h3>Technology</h3>
+             
+              <h3> <a href="Query.html" class="hide">Technology</a></h3>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -223,7 +226,8 @@
                 class="card-img-top img-fluid"
                 alt="..."
               />
-              <h3>Health</h3>
+          
+              <h3><a href="Query.html" class="hide">Health</a></h3>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -245,8 +249,8 @@
                 class="card-img-top img-fluid"
                 alt="..."
               />
-
-              <h3>Sports</h3>
+                 
+              <h3><a href="Query.html" class="hide">Sports</a></h3>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -268,7 +272,8 @@
                 class="card-img-top img-fluid"
                 alt="..."
               />
-              <h3>Science</h3>
+           
+              <h3><a href="Query.html" class="hide">Science</a></h3>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -297,7 +302,7 @@
             </div>
           </div>
 
-          <form>
+          <form id="form">
             <div class="row">
               <div class="col-md-8 col-12">
                 <input type="email" placeholder="Enter Your Email" required />

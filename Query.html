@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="Css/all.css" />
 
   </head>
-  <body>
+  <body onload="queryfetch()">
     <!-- Scroll bottom to top Start -->
     <!-- fas fa-arrow-circle-up -->
     <i
@@ -39,8 +39,8 @@
     <header>
       <nav class="header">
         <div class="SearchBar">
-          <input type="text" placeholder="Searching..." />
-          <div class="SearchIcon"><i class="fas fa-search"></i></div>
+          <input type="text" placeholder="Searching..."  id="SearchQueryNews"/>
+          <div class="SearchIcon" id="SearchIcon"><i class="fas fa-search"></i></div>
         </div>
 
         <div class="Headerheading">
@@ -80,7 +80,7 @@
       </div>
 
       <div class="menu">
-        <div class="submenu"><a href="/Inews/" class="hide">Home</a></div>
+        <div class="submenu"><a href="/" class="hide">Home</a></div>
 
         <div class="submenu">
           <a href="#" id="CategoriesToggle">
@@ -109,16 +109,7 @@
       <h1 class="my-5 mb-5">Category <span id="QueryHead"></span></h1>
 
       <div class="FetchQuery" id="FetchQuery">
-        <div class="card mb-3 mx-auto">
-          <img src="Images/Sports.jpg" class="card-img-top img-fluid" alt="..." style="height: 200px; object-fit: cover;">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-primary">By Java Developer</p>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Published 3 mins ago</small></p>
-          </div>
-        </div>
-
+        
 
       
 
@@ -140,7 +131,7 @@
             </div>
           </div>
 
-          <form>
+          <form id="form">
             <div class="row">
               <div class="col-md-8 col-12">
                 <input type="email" placeholder="Enter Your Email" required />

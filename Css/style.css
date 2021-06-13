@@ -15,7 +15,7 @@ body{
     height: 100%;
     width: 100vw;
     position: relative;
-  
+    
     
 }
 
@@ -362,6 +362,11 @@ body{
     z-index: 2;
     transition: all 0.7s linear;
 
+}
+
+.Popular .SubPopular .card .subcard h3 a{
+    color:#ffffff;
+    text-decoration: none;
 }
 
 .Popular .SubPopular .card .subcard:hover h3{
