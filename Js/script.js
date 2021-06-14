@@ -1,3 +1,12 @@
+// Loader JS 
+var Preloader = document.getElementById("loader");
+function myFunction() {
+
+    Preloader.style.display = "none";
+
+}
+
+
 
 // Global Variable Declaration
 var menu = document.getElementById("HamburgerMenu");
