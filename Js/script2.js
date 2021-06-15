@@ -39,8 +39,9 @@ function fetchPopulardata()
           let item2 = item.content;
           let original = item2.slice(0, item2.length - 15);
           let title = item.title;
+          let url = item.url;
 
-          InsertData(arr[index], title, original);
+          InsertData(arr[index], title, original,url);
 
          })
       
@@ -48,12 +49,14 @@ function fetchPopulardata()
         
       })
       .catch((error) => {
+        SubPopular1.innerHTML =`<h1 class="text-center text-danger">Some Error Occured Try Again Later!!</h1>
+                                <h2 class="text-center text-danger">Sorry For Inconvenience</h2>`;
         console.log(error);
       });
    
 }
 
-let InsertData = (queryValue, title, original) => {
+let InsertData = (queryValue, title, original,url) => {
   if (countimgvalue < 3) {
     SubPopular1.innerHTML += ` <div class="col-md-4 col-12 my-2">
      <div class="card" style="width: 100%">
@@ -72,7 +75,7 @@ let InsertData = (queryValue, title, original) => {
          <p class="card-text">
          ${original}
          </p>
-         <a href="#" class="btn btn-primary">Read More</a>
+         <a href=${url} class="btn btn-primary">Read More</a>
        </div>
      </div>
    </div>`;
@@ -94,7 +97,7 @@ let InsertData = (queryValue, title, original) => {
           <p class="card-text">
           ${original}
           </p>
-          <a href="#" class="btn btn-primary">Read More</a>
+          <a href=${url} class="btn btn-primary">Read More</a>
         </div>
       </div>
     </div>`;

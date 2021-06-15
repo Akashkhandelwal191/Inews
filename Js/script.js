@@ -139,6 +139,8 @@ const GetSearchQueryValue = (queryValue) =>{
       })
       .catch((error) => {
         console.log(error);
+        FetchQuery.innerHTML =`<h1 class="text-center text-danger">Some Error Occured Try Again Later!!</h1>
+        <h2 class="text-center text-danger">Sorry For Inconvenience</h2>`;
       });
 };
 
@@ -210,7 +212,10 @@ function BreakingTrending() {
       carousel2();
     })
     .catch((error) => {
+      FetchTrending.innerHTML = `<div class="item"><h1>Some Error Occured Try Again Later!!</h1></div>`;
       console.log(error);
+      
+      
     });
 }
 
