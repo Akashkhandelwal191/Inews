@@ -109,7 +109,7 @@ const GetSearchQueryValue = (queryValue) =>{
     console.log(queryValue);
         //Fetch Api
     fetch(
-      `https://gnews.io/api/v4/search?q=${queryValue}&lang=en&country=in&token=${key}`
+      `https://gnews.io/api/v4/search?q=${queryValue}&lang=en&country=in&token=${key3}`
     )
       .then((data) => {
         return data.json();
@@ -170,7 +170,7 @@ topscroll.addEventListener("click", function () {
 function BreakingTrending() {
   //Fetch Api
   fetch(
-    `https://gnews.io/api/v4/search?q=breaking&lang=en&country=in&max=5&token=${key}`
+    `https://gnews.io/api/v4/search?q=breaking&lang=en&country=in&max=5&token=${key3}`
   )
     .then((data) => {
       return data.json();
