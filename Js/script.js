@@ -102,7 +102,7 @@ const queryfetch = () => {
 
 };
 
-
+// Fetching data from queryvalue
 const GetSearchQueryValue = (queryValue) =>{
 
   
